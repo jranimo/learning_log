@@ -138,7 +138,7 @@ BOOTSTRAP3 = {
 if os.getcwd() == '/app':
     import dj_database_url
     DATABASES ={
-    'default': dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgres://localhost')
     }
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
@@ -149,7 +149,7 @@ if os.getcwd() == '/app':
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
+    STATIC_ROOT = '/static/'
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
         )
