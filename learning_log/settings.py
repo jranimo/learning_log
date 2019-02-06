@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 # My settings
 LOGIN_URL = '/users/login'
@@ -135,22 +135,22 @@ BOOTSTRAP3 = {
 }
 
 # Heroku settings
-if os.getcwd() == '/app':
-    import dj_database_url
-    DATABASES ={
-        'default': dj_database_url.config(default='postgres://localhost')
-    }
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost')
+}
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Allow all host headers.
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
     # Static asset configuration
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-        )
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
