@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-7=u293=jxd^i1w4hori3zs!a8h2hhl&n1zfby+8-y7_o^c$zw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# Allow only Heroky to host the project.
+ALLOWED_HOSTS = ['learning-log-jrr.herokuapp.com']
 
 
 # Application definition
