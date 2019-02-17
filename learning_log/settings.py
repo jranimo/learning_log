@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # My apps
     'learning_logs',
     'users',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

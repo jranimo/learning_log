@@ -1,0 +1,36 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block header %}
+  <h1>Account Summary</h1>
+{% endblock header %}
+
+
+{% block content %}
+<div class="container">
+  <ul>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          Topic Count
+        </h3>
+      <div class="panel-body">
+          {{topic}}
+      </div>
+  </ul>
+  <ul>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          Entry Count
+        </h3>
+      <div class="panel-body">
+          {{entry}}
+      </div>
+
+      </div>
+    </div>
+  </ul>
+
+</div>
+
+{% endblock content %}
