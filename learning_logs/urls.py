@@ -26,6 +26,9 @@ urlpatterns = [
    # Page to delete an entry
    url(r'^delete_entry/(?P<entry_id>\d+)/$', views.delete_entry, name='delete_entry'),
 
-      # Page to delete atopic
+   # Page to delete a topic
    url(r'^delete_topic/(?P<topic_id>\d+)/$', views.delete_topic, name='delete_topic'),
+
+   # Account summary page
+   url(r'^account/$', views.account, name='account'),
 ]

@@ -25,7 +25,11 @@
               Learning Log</a>
           <button type="button" class="navbar-toggle collapsed"
               data-toggle="collapse" data-target="#navbar"
-              aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+              aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
           </button>
         </div>
 
@@ -38,7 +42,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-              <li><a>Hello, {{user.username}}.</a></li>
+              <li><a href="{% url 'account' %}"> Hello, {{user.username}}</a></li>
               <li><a href="{% url 'logout' %}">log out</a></li>
             {% else %}
               <li><a href="{% url 'register' %}">register</a></li>

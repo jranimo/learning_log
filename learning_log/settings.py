@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-7=u293=jxd^i1w4hori3zs!a8h2hhl&n1zfby+8-y7_o^c$zw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# Allow only Heroky to host the project.
-ALLOWED_HOSTS = ['learning-log-jrr.herokuapp.com']
+# Allow only Heroku to host the project.
+ALLOWED_HOSTS = ['learning-log-jrr.herokuapp.com', 'localhost'] #localhost
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # My apps
     'learning_logs',
     'users',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -137,9 +138,9 @@ BOOTSTRAP3 = {
 
 # Heroku settings
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost')
-}
+#DATABASES = {
+#    'default': dj_database_url.config(default='postgres://localhost')
+#}
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -155,3 +156,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+#RESTFUL API
+REST_FRAMEWORK = {
+    #Use Django's standard `django.contrib.auth` permissions,
+    #or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #During Development only

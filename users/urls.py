@@ -3,6 +3,7 @@
 from django.conf.urls import url
 from django.contrib.auth.views import LoginView
 
+
 from . import views
 
 urlpatterns = [
@@ -11,5 +12,6 @@ urlpatterns = [
    # logout page
    url(r'^logout/$', views.logout_view, name='logout'),
    # registration page
-   url(r'^register/$', views.register, name='register')
+   url(r'^register/$', views.register, name='register'),
+
 ]

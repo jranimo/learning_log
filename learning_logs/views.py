@@ -123,6 +123,16 @@ def delete_topic(request, topic_id):
    else:
       form = DeleteForm(instance=topic)
 
-   context = {'topic': topic, 'form': form}
+   context = {'topic': topic, 'form':form}
    return render(request, 'learning_logs/delete_topic.html', context)
+
+
+@login_required
+def account(request):
+   topic = Topic.objects.filter(owner=request.user)
+   entry = Entry.objects.filter(topic__owner=request.user)
+
+   context = {'topic':topic.count(),
+   'entry':entry.count()}
+   return render(request, 'learning_logs/account.html', context)
 
