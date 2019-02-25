@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'learning_logs',
     'users',
     'rest_framework',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
