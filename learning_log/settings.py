@@ -43,10 +43,11 @@ INSTALLED_APPS = [
     'bootstrap3',
 
     # My apps
+    'widget_tweaks',
     'learning_logs',
     'users',
     'rest_framework',
-    'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
