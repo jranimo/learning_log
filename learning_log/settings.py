@@ -26,7 +26,7 @@ SECRET_KEY = '-7=u293=jxd^i1w4hori3zs!a8h2hhl&n1zfby+8-y7_o^c$zw'
 DEBUG = False
 
 # Allow only Heroku to host the project.
-ALLOWED_HOSTS = ['learning-log-jrr.herokuapp.com'] #localhost
+ALLOWED_HOSTS = ['learning-log-jrr.herokuapp.com', 'localhost'] #localhost
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'learning_logs',
     'users',
     'rest_framework',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

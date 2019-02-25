@@ -29,4 +29,3 @@ class Entry(models.Model):
          return self.text
 
 
-
